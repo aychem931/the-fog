@@ -75,12 +75,18 @@ button {
 }
 
 /* ======================== */
-/* FOG LAYER — PHASE 1      */
+/* FOG LAYER — SLIPPERY BLUR */
 /* ======================== */
 
 .fog-active .card {
-  filter: blur(2px);
-  transform: translateY(1px);
+  animation: slippery-blur 6s ease-in-out infinite;
+}
+
+@keyframes slippery-blur {
+  0% { filter: blur(0px); }
+  30% { filter: blur(1.5px); }
+  60% { filter: blur(0.5px); }
+  100% { filter: blur(1px); }
 }
 
 .fog-active body {
