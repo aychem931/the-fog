@@ -75,7 +75,30 @@ button {
 }
 
 /* ======================== */
-/* FOG LAYER — SLIPPERY BLUR */
+/* FOG ACTIVATION           */
+/* ======================== */
+
+.fog-active body {
+  background: linear-gradient(
+    180deg,
+    #f5f7fb 0%,
+    #eef0f6 50%,
+    #f5f7fb 100%
+  );
+}
+
+.fog-active .container {
+  animation: fog-breathe 6s ease-in-out infinite;
+}
+
+@keyframes fog-breathe {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.015); }
+  100% { transform: scale(1); }
+}
+
+/* ======================== */
+/* FLICKER BLUR             */
 /* ======================== */
 
 .fog-active .card {
@@ -96,38 +119,19 @@ button {
   100% { filter: blur(0px); }
 }
 
-}
-
-.fog-active .container {
-  animation: fog-breathe 6s ease-in-out infinite;
-}
-
-@keyframes fog-breathe {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.015); }
-  100% { transform: scale(1); }
-}
 /* ======================== */
-/* TEXT DRIFT — PHASE 2     */
+/* WORD DRIFT (downward)    */
 /* ======================== */
 
-.fog-active label,
-.fog-active h1,
-.fog-active .subtitle {
-  animation: text-drift 5s ease-in-out infinite;
+.fog-active .drift-word {
+  animation: word-drift 5s ease-in-out infinite;
 }
 
-@keyframes text-drift {
-  0%   { transform: translateX(0px); }
-  10%  { transform: translateX(1px); }
-  20%  { transform: translateX(-1px); }
-  30%  { transform: translateX(2px); }
-  40%  { transform: translateX(0px); }
-  50%  { transform: translateX(-2px); }
-  60%  { transform: translateX(1px); }
-  70%  { transform: translateX(-1px); }
-  80%  { transform: translateX(2px); }
-  90%  { transform: translateX(0px); }
-  100% { transform: translateX(-1px); }
+@keyframes word-drift {
+  0%   { transform: translateY(0px); }
+  20%  { transform: translateY(1px); }
+  40%  { transform: translateY(0px); }
+  60%  { transform: translateY(2px); }
+  80%  { transform: translateY(0px); }
+  100% { transform: translateY(1px); }
 }
-
