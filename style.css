@@ -79,23 +79,23 @@ button {
 /* ======================== */
 
 .fog-active .card {
-  animation: slippery-blur 6s ease-in-out infinite;
+  animation: flicker-blur 4s ease-in-out infinite;
 }
 
-@keyframes slippery-blur {
-  0% { filter: blur(0px); }
-  30% { filter: blur(1.5px); }
-  60% { filter: blur(0.5px); }
-  100% { filter: blur(1px); }
+@keyframes flicker-blur {
+  0%   { filter: blur(0px); }
+  10%  { filter: blur(1px); }
+  20%  { filter: blur(0px); }
+  30%  { filter: blur(1.2px); }
+  40%  { filter: blur(0.3px); }
+  50%  { filter: blur(1px); }
+  60%  { filter: blur(0px); }
+  70%  { filter: blur(0.8px); }
+  80%  { filter: blur(0px); }
+  90%  { filter: blur(1px); }
+  100% { filter: blur(0px); }
 }
 
-.fog-active body {
-  background: linear-gradient(
-    180deg,
-    #f5f7fb 0%,
-    #eef0f6 50%,
-    #f5f7fb 100%
-  );
 }
 
 .fog-active .container {
