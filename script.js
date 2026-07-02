@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     successMessage.style.display = "block";
     successMessage.textContent =
-      "Form captured. This is our calm baseline.";
+      "Please fill out required information.";
   });
 
   /* Fog activation delay */
@@ -30,14 +30,34 @@ document.addEventListener("DOMContentLoaded", () => {
   "Static",
   "Why",
   "Mistake",
-  "Drift",
   "Forget",
   "Almost",
   "Maybe",
   "Unclear"
 ];
+/* Delayed typing effect */
+const inputs = document.querySelectorAll("input");
 
+inputs.forEach(input => {
+  let buffer = "";
 
+  input.addEventListener("keydown", (e) => {
+    // Prevent immediate typing
+    e.preventDefault();
+
+    // Add the character to a buffer
+    if (e.key.length === 1) {
+      buffer += e.key;
+    } else if (e.key === "Backspace") {
+      buffer = buffer.slice(0, -1);
+    }
+
+    // Apply the buffer after a delay
+    setTimeout(() => {
+      input.value = buffer;
+    }, 120); // 120ms delay — subtle, but noticeable
+  });
+});
   function randomSwap() {
     const elements = document.querySelectorAll(".swap-word");
     elements.forEach(el => {
