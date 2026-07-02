@@ -4,91 +4,37 @@
   <meta charset="UTF-8" />
   <title>Create your account</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
- <link rel="stylesheet" href="style.css">
-  </head>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
   <div class="container">
     <div class="card">
-      <div class="header">
-        <h1 class="header-title">Create your account</h1>
-        <p class="header-subtitle">Just a few quick details.</p>
-      </div>
+      <h1>Create your account</h1>
+      <p class="subtitle">Just a few quick details.</p>
 
-      <form id="contact-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            autocomplete="name"
-            placeholder="Hannah"
-            required
-          />
-          <div class="hint">How you’d like to be addressed.</div>
-        </div>
+      <form id="signupForm">
+        <label>Name:</label>
+        <input type="text" id="name" placeholder="Hannah" required />
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autocomplete="email"
-            placeholder="you@example.com"
-            required
-          />
-          <div class="hint">We’ll only use this for your account.</div>
-        </div>
+        <label>Email:</label>
+        <input type="email" id="email" placeholder="you@example.com" required />
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            id="password"
-            name="password"
-            type="password"
-            autocomplete="new-password"
-            placeholder="••••••••"
-            required
-          />
-          <div class="hint">At least 8 characters is a good start.</div>
-        </div>
+        <label>Password:</label>
+        <input type="password" id="password" placeholder="********" required />
 
-        <div class="button-row">
-          <button type="submit">Next</button>
-        </div>
-
-        <div class="footer-hint">
-          This will only take a moment.
-        </div>
-
-        <div class="success-message" id="success-message">
-          Form submitted (for now we just log it). ✨
-        </div>
+        <button type="submit">Next!</button>
       </form>
+
+      <p id="successMessage" class="success-message">
+        This will only take a moment.
+      </p>
     </div>
   </div>
 
-  <script>
-    const form = document.getElementById("contact-form");
-    const successMessage = document.getElementById("success-message");
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        password: form.password.value.trim(),
-      };
-
-      console.log("Form data:", data);
-
-      successMessage.style.display = "block";
-      successMessage.textContent =
-        "Form captured. This is our calm baseline. 🌿";
-    });
-  </script>
-<script src="script.js"></script>
+  <!-- External JS -->
+  <script src="script.js"></script>
 </body>
 </html>
