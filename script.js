@@ -24,7 +24,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 5000);
 
   /* Random word swap — subtle cognitive slip */
-  const altWords = ["Noise", "Blur", "Echo", "Static", "Fog"];
+ const altWords = [
+  "Noise",
+  "Lost",
+  "Static",
+  "Why",
+  "Mistake",
+  "Drift",
+  "Forget",
+  "Almost",
+  "Maybe",
+  "Unclear"
+];
+
 
   function randomSwap() {
     const elements = document.querySelectorAll(".swap-word");
